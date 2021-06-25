@@ -1,0 +1,13 @@
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\FundamentosCSHarp.exe
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\FundamentosCSHarp.deps.json
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\FundamentosCSHarp.runtimeconfig.json
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\FundamentosCSHarp.runtimeconfig.dev.json
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\FundamentosCSHarp.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\FundamentosCSHarp.pdb
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.csproj.AssemblyReference.cache
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.AssemblyInfoInputs.cache
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.AssemblyInfo.cs
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.csproj.CoreCompileInputs.cache
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.pdb
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.genruntimeconfig.cache
