@@ -1,5 +1,6 @@
 ﻿using System;
-
+using FundamentosCSHarp.Models;
+//importamos donde esta bebida
 namespace FundamentosCSHarp
 {
     class Program
@@ -55,6 +56,16 @@ namespace FundamentosCSHarp
             //object todos los elementos de c heredan de este objeto
             object persona = new { mbre = "hector", apellido = "sadklasd" };
             //tipos anonimos
+
+            //---------objetos-------
+            //con el namesapce evitamos el import ya podemos usar elobjeto
+            Bebida bebida = new Bebida("Coca Cola", 1000);
+            bebida.Nombre = "Coca Cola";
+            bebida.beberse(500);
+            Console.WriteLine(bebida.Cantidad);
+
+            Cerveza cerveza = new Cerveza(500);
+            cerveza.beberse(10);
         }
     }
 }
