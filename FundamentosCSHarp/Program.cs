@@ -91,11 +91,33 @@ namespace FundamentosCSHarp
 
             //implemetacion
             //palabra reservada
-            List<int> lista = new List<int>();
+            List<int> lista = new List<int>() { 1,2,3,4,5,6,7,8,9};
             //() con parentesis indicamos que es una clase ademas impoortados 
             //los genericos
+            lista.Add(1);
+            lista.Add(2);
+            lista.Remove(2);
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item);
+            }
+            //podemos agregar cualquier cantidad de elemnetos
+            //colas
+            Queue<int> cola = new Queue<int>();
 
+            //tambien puede ser una lista de objetos
+            List<Cerveza> cervezas = new List<Cerveza>() { new Cerveza(10)};
 
+            cervezas.Add(new Cerveza(500));
+            Cerveza erdinger = new Cerveza(60);
+            cervezas.Add(erdinger);
+
+            //formas de agregar elementos
+
+            foreach (var cerveza2 in cervezas)
+            {
+                Console.WriteLine(cerveza2);
+            }
             
         }
     }
