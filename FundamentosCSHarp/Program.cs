@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FundamentosCSHarp.Models;
 //importamos donde esta bebida
 namespace FundamentosCSHarp
@@ -66,6 +67,36 @@ namespace FundamentosCSHarp
 
             Cerveza cerveza = new Cerveza(500);
             cerveza.beberse(10);
+
+            //tipos de datos
+
+            int[] numeros = new int[10] {1,2,3,4,5,6,7,8,9,0};
+            //indicmos que es un arreglo, le damos una dimension y datos por default si queremos
+            int numeroNuevo = numeros[0];
+
+            //recorridos
+            for (int i = 0; i < numeros.Length; i++) {
+                Console.WriteLine("iteracion"+i+"-"+numeros[i]);
+            }
+
+            foreach (var numeroI in numeros) {
+                Console.WriteLine(numeroI);
+            }
+            //tambien sirve para lista
+
+            //listas en arreglos damos una longitud inicial
+            //un arreglo es mas rapido que una lista
+            //la lista es una clase de C su longitud va cambiando
+            //tambien existe pilas y colas
+
+            //implemetacion
+            //palabra reservada
+            List<int> lista = new List<int>();
+            //() con parentesis indicamos que es una clase ademas impoortados 
+            //los genericos
+
+
+            
         }
     }
 }
