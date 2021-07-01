@@ -121,7 +121,22 @@ namespace FundamentosCSHarp
 
             //----interfaces-----
             //resolver problemas de multi herencia
-            
+
+            var bebidaAlcoholica = new Vino(100);
+            MostrarRecomendacion(bebidaAlcoholica);
+            //respeta las interfaz
+
+            var bebidaAlcoholica2 = new Cerveza(100);
+            MostrarRecomendacion(bebidaAlcoholica);
+            //poemos implmentar muchas interfaces en una clase
+
+            //podemos usar en una peticion
+        }
+
+        static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
+            //mostramos cualquier bebida alcoholica
+            //podemos asegurarnos de los metodos
+            bebida.MaxRecomendado();
         }
     }
 }
