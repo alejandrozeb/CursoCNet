@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCSHarp.Models
 {
-    class Bebida
+    internal class Bebida
     {
         //atributos
         public string Nombre { get; set; }
@@ -17,7 +17,8 @@ namespace FundamentosCSHarp.Models
         //existen atributos privados que no se puede acceder private
         //existe protegido que si se puede acceder pero solo clases heredadas protected
         public int Cantidad { get; set; }
-
+        
+        //implementado interface
         //contructor
         public Bebida(string Nombre,int Cantidad) {
             //el contructor siempre lleva el mismo nombre de la clase

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCSHarp.Models
 {
-    class Cerveza : Bebida
+    class Cerveza : Bebida, IBebidaAlcoholica
     {
         public Cerveza(int Cantidad, string Nombre = "Cerveza") 
             : base(Nombre, Cantidad) { 
@@ -12,6 +12,13 @@ namespace FundamentosCSHarp.Models
 
             //primero van las variables sin datos y al final las con default
             
+        }
+        //implementando interfaz
+        public int Alcohol { set; get; }
+        //implementando metodo
+        public void MaxRecomendado() {
+            //implementar metodo
+            Console.WriteLine("el maximo permitido es 10");
         }
     }
 }

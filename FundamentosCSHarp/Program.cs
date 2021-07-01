@@ -118,6 +118,9 @@ namespace FundamentosCSHarp
             {
                 Console.WriteLine(cerveza2);
             }
+
+            //----interfaces-----
+            //resolver problemas de multi herencia
             
         }
     }
