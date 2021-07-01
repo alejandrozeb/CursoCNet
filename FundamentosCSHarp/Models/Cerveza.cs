@@ -6,6 +6,7 @@ namespace FundamentosCSHarp.Models
 {
     class Cerveza : Bebida, IBebidaAlcoholica
     {
+        public string Marca { get; set; }
         public Cerveza(int Cantidad, string Nombre = "Cerveza") 
             : base(Nombre, Cantidad) { 
             //con base instanciamos el constructor
