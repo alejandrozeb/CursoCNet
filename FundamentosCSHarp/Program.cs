@@ -152,6 +152,11 @@ namespace FundamentosCSHarp
                 cerveza.Alcohol = 5;
                 cervezaBD.Edit(cerveza4,5);
             }
+
+            //eliiminando
+            {
+                cervezaBD.Delete(5);
+            }
             //consulta bd
             
             var cervezas3 = cervezaBD.Get();

@@ -98,5 +98,27 @@ namespace FundamentosCSHarp.Models
                 connection.Close();
             }
         }
+
+        public void Delete(int Id)
+        {
+            String query
+                = "delete from cerveza " +
+                "where id=@id";
+            //no es bueno concatenar una consulta
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand(query, connection);
+                //agregando valores de cerveza
+                command.Parameters.AddWithValue("@id", Id);
+
+                connection.Open();
+
+                command.ExecuteNonQuery();
+                //indicamos que es un insert
+
+                connection.Close();
+            }
+        }
     }
 }
