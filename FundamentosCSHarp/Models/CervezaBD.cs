@@ -71,5 +71,32 @@ namespace FundamentosCSHarp.Models
                 connection.Close();
             }
         }
+
+        public void Edit(Cerveza cerveza, int Id)
+        {
+            String query
+                = "update cerveza set nombre=@cerveza, " +
+                "marca = @marca, alcohol=@alcohol, cantidad=@cantidad "+
+                "where id=@id";
+            //no es bueno concatenar una consulta
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand(query, connection);
+                //agregando valores de cerveza
+                command.Parameters.AddWithValue("@nombre", cerveza.Nombre);
+                command.Parameters.AddWithValue("@marca", cerveza.Marca);
+                command.Parameters.AddWithValue("@alcohol", cerveza.Alcohol);
+                command.Parameters.AddWithValue("@cantidad", cerveza.Cantidad);
+                command.Parameters.AddWithValue("@id", Id);
+
+                connection.Open();
+
+                command.ExecuteNonQuery();
+                //indicamos que es un insert
+
+                connection.Close();
+            }
+        }
     }
 }

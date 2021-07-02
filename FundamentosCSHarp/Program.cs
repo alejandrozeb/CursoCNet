@@ -145,6 +145,13 @@ namespace FundamentosCSHarp
             }
             //creamos el objeto en un objeto
 
+            //actualizando
+            {
+                Cerveza cerveza4 = new Cerveza(5, "Pale ale");
+                cerveza.Marca = "Minerva";
+                cerveza.Alcohol = 5;
+                cervezaBD.Edit(cerveza4,5);
+            }
             //consulta bd
             
             var cervezas3 = cervezaBD.Get();
