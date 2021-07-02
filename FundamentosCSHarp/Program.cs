@@ -134,8 +134,19 @@ namespace FundamentosCSHarp
 
             //los tipo list tiene varias interfaces implementadas
 
-            //consulta bd
+            //insertamos una cerveza
             CervezaBD cervezaBD = new CervezaBD();
+
+            {
+                Cerveza cerveza4 = new Cerveza(15, "Pale ale");
+                cerveza.Marca = "Minerva";
+                cerveza.Alcohol = 6;
+                cervezaBD.Add(cerveza4);
+            }
+            //creamos el objeto en un objeto
+
+            //consulta bd
+            
             var cervezas3 = cervezaBD.Get();
 
             foreach (var item in cervezas3)
