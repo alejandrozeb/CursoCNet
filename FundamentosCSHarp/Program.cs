@@ -131,6 +131,17 @@ namespace FundamentosCSHarp
             //poemos implmentar muchas interfaces en una clase
 
             //podemos usar en una peticion
+
+            //los tipo list tiene varias interfaces implementadas
+
+            //consulta bd
+            CervezaBD cervezaBD = new CervezaBD();
+            var cervezas3 = cervezaBD.Get();
+
+            foreach (var item in cervezas3)
+            {
+                Console.WriteLine(item.Nombre);
+            }
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {

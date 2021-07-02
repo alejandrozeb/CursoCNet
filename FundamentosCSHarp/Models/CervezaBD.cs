@@ -22,8 +22,29 @@ namespace FundamentosCSHarp.Models
             //using tiene dos funciones
             //agegar los namessapce
             //todo lo que existe en using se muere al salir
-            using (SqlConnection connection = new SqlConnection(connectionString)) { 
+            using (SqlConnection connection = new SqlConnection(connectionString)) {
+                //sirve para enviar consultas
+                SqlCommand command = new SqlCommand(query, connection);
+                //abrimos la conexion
+                connection.Open();
+                //ejecutamos la lectura de datos
+                //uno a uno, s eejcuta el codigo
+                SqlDataReader reader = command.ExecuteReader();
 
+                //leemos registro por registro
+                while (reader.Read()) {
+                    int Cantidad = reader.GetInt32(3);
+                    string Nombre = reader.GetString(0);
+
+                    Cerveza cerveza = new Cerveza(Cantidad, Nombre);
+
+                    cerveza.Alcohol = reader.GetInt32(2);
+                    cerveza.Marca = reader.GetString(1);
+                    cervezas.Add(cerveza);
+                }
+                //cerrando el reader
+                reader.Close();
+                connection.Close();
             }
                 return cervezas;
         }
