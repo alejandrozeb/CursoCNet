@@ -12,7 +12,10 @@ namespace FundamentosCSHarp.Models
             //con base instanciamos el constructor
 
             //primero van las variables sin datos y al final las con default
-            
+        }
+
+        //otro contructor
+        public Cerveza() : base(null, 0) { 
         }
         //implementando interfaz
         public int Alcohol { set; get; }

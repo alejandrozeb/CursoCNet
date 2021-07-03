@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using FundamentosCSHarp.Models;
 //importamos donde esta bebida
+
+//JSON
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+
 namespace FundamentosCSHarp
 {
     class Program
@@ -165,6 +171,26 @@ namespace FundamentosCSHarp
             {
                 Console.WriteLine(item.Nombre);
             }
+
+            //serializacion de objetos json
+
+            Cerveza cervezaJson = new Cerveza(10, "Cerveza");
+
+            //JSON
+            //{ cantida:10, Nombre:"cerveza", cosas: [], }
+            //necesitamso un namespace
+
+            string miJSon = JsonSerializer.Serialize(cervezaJson);
+            //podemos mandar a un servicio
+
+            //de escribe en txt
+            File.WriteAllText("objeto.txt", miJSon);
+
+            //de txt a objeto
+            string miJson2 = File.ReadAllText("objeto.txt");
+            Cerveza cervezaDes = JsonSerializer.Deserialize<Cerveza>(miJson2);
+
+            
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
