@@ -219,15 +219,37 @@ namespace FundamentosCSHarp
             }
 
 
-
+            //-----Post----------
 
             //añadimos async task para que se pueda realizar asincronismo
             //using System.Net.Http; usaremos para pode realizar las consultas
 
             string url = "https://jsonplaceholder.typicode.com/posts";
-           // var client = new HttpClient();
+            var client2 = new HttpClient();
+            Post post = new Post()
+            { 
+                userId = 50,
+                body = "hola como estas",
+                title = "titulo de saludo"
+            };
 
-            //debemo ignorar las mayusculas
+            //serializamos el contenido del objetp
+
+            var data = JsonSerializer.Serialize<Post>(post);
+            //contenido especifico de la consulta
+            HttpContent content2 = new StringContent(data, System.Text.Encoding.UTF8, "application/json")
+            //enviamos la data, el encode y decimos que sera un json
+            //debemo ignorar las mayusculas o ninusculas con el json de respuesta
+
+            var httpResponse3 = await client.PostAsync(url, content2);
+            //cambia a put pero debemos cambiar la url
+            //con var s ele asigna el tipo de la derecha
+            if (httpResponse.IsSuccessStatusCode) {
+                //verifica los estdos del 200 al 299
+                var resulPost = await httpResponse.Content.ReadAsStringAsync();
+                var postResult = JsonSerializer.Deserialize<Post>(resulPost);
+            }
+
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
