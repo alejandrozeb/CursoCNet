@@ -250,6 +250,12 @@ namespace FundamentosCSHarp
                 var postResult = JsonSerializer.Deserialize<Post>(resulPost);
             }
 
+
+            //GENEREICOS---- como las listas <> 
+            
+           
+
+
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
