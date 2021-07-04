@@ -1,13 +1,15 @@
-﻿using System;
+﻿using FundamentosCSHarp.Models;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace FundamentosCSHarp.service
+namespace FundamentosCSHarp.Service
 {
-    public class SendRequest<T>
+    //traemos la interface pero esta interface debe implementar las clases que usemos con este generico
+    public class SendRequest<T> where T: IRequestTable
     {
         //T indica que va a  recibir una clase
         private HttpClient _client = new HttpClient();

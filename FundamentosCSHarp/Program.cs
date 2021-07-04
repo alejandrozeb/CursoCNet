@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FundamentosCSHarp.Models;
+using FundamentosCSHarp.Service;
 //importamos donde esta bebida
 
 //JSON
@@ -244,18 +245,22 @@ namespace FundamentosCSHarp
             var httpResponse3 = await client.PostAsync(url, content2);
             //cambia a put pero debemos cambiar la url
             //con var s ele asigna el tipo de la derecha
-            if (httpResponse.IsSuccessStatusCode) {
+            if (httpResponse3.IsSuccessStatusCode) {
                 //verifica los estdos del 200 al 299
-                var resulPost = await httpResponse.Content.ReadAsStringAsync();
+                var resulPost = await httpResponse3.Content.ReadAsStringAsync();
                 var postResult = JsonSerializer.Deserialize<Post>(resulPost);
             }
 
 
             //GENEREICOS---- como las listas <> 
-            
-           
 
+            var cervezaG = new Cerveza()
+            { Alcohol = 5, Cantidad = 500, Marca = "Colima", Nombre = "Ticus" };
 
+            Service.SendRequest<Cerveza> service = new Service.SendRequest<Cerveza>();
+            var CervezaRespuesta = await service.Send(cervezaG);
+
+            //podemos cambiar por post u otro objeto
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {

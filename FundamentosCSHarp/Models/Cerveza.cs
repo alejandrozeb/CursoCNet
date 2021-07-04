@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCSHarp.Models
 {
-    class Cerveza : Bebida, IBebidaAlcoholica
+    class Cerveza : Bebida, IBebidaAlcoholica, IRequestTable
     {
         public string Marca { get; set; }
         public Cerveza(int Cantidad, string Nombre = "Cerveza") 
@@ -19,6 +19,8 @@ namespace FundamentosCSHarp.Models
         }
         //implementando interfaz
         public int Alcohol { set; get; }
+
+        public int Id { get; set; }
         //implementando metodo
         public void MaxRecomendado() {
             //implementar metodo

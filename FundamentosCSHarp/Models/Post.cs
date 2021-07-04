@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCSHarp.Models
 {
-    class Post
+    class Post : IRequestTable
     {
         public int userId { get; set; }
         public int id { get; set; }
