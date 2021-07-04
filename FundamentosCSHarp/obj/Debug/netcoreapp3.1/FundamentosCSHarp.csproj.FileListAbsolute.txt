@@ -11,3 +11,10 @@ D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netco
 D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.dll
 D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.pdb
 D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.genruntimeconfig.cache
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\You tube\FundamentoCSharp\FundamentosCSHarp\FundamentosCSHarp\obj\Debug\netcoreapp3.1\FundamentosCSHarp.csproj.CopyComplete

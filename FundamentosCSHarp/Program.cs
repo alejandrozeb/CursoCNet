@@ -7,12 +7,14 @@ using FundamentosCSHarp.Models;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace FundamentosCSHarp
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             byte numero = 255;
             sbyte numeroNegativo = -128;
@@ -190,7 +192,42 @@ namespace FundamentosCSHarp
             string miJson2 = File.ReadAllText("objeto.txt");
             Cerveza cervezaDes = JsonSerializer.Deserialize<Cerveza>(miJson2);
 
-            
+
+
+            //---get a una APi
+            string urla = "https://jsonplaceholder.typicode.com/posts";
+            HttpClient client = new HttpClient();
+
+            //esto es ayncrono
+            //var res = client.GetAsync(urla);
+
+            Console.WriteLine("mordi mi nugget");
+            //esperamos la respuesta
+            //await res;
+
+            //se ejecutara despes de res por el await
+
+            Console.WriteLine("beber cerveza");
+
+            var httpResponse = await client.GetAsync(urla);
+            if (httpResponse.IsSuccessStatusCode) {
+                //devuelve el body y es asincrono
+                var content = await httpResponse.Content.ReadAsStringAsync();
+                //deserializamos
+                List<Models.Post> posts =
+                    JsonSerializer.Deserialize<List<Models.Post>>(content);
+            }
+
+
+
+
+            //añadimos async task para que se pueda realizar asincronismo
+            //using System.Net.Http; usaremos para pode realizar las consultas
+
+            string url = "https://jsonplaceholder.typicode.com/posts";
+           // var client = new HttpClient();
+
+            //debemo ignorar las mayusculas
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
@@ -198,5 +235,6 @@ namespace FundamentosCSHarp
             //podemos asegurarnos de los metodos
             bebida.MaxRecomendado();
         }
+
     }
 }
