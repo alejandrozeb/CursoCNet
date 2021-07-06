@@ -274,6 +274,23 @@ namespace FundamentosCSHarp
             //default te devuelve el defautl
             Console.WriteLine(numeroLi);
             //sin for o un ciclo se realizo con una funcion
+            //linq es un lenguaje de extension de c sharp, si no existe el valor devuelve 0
+            //linq es un lenguje de consulta
+
+            var numerosOrdenados = numerosLinq.OrderBy(d => d);
+            //ordena los numeros
+
+
+            var numerosSumados = numerosLinq.Sum(d => d);
+            //sumatoria de toda la lista
+            //average
+            //linq tambien se puede usar con objetos creados
+            //from d in cervezas order by d.Marca select d 
+            //para ordenar por marca
+            //from d in cervezas where d.Nobmre=="Pale Ale" order by d.Marca select d 
+
+            //se pueden hacer uniones
+
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
