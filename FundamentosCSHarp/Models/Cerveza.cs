@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCSHarp.Models
 {
-    class Cerveza : Bebida, IBebidaAlcoholica, IRequestTable
+    public class Cerveza : Bebida, IBebidaAlcoholica, IRequestTable
     {
         public string Marca { get; set; }
         public Cerveza(int Cantidad, string Nombre = "Cerveza") 

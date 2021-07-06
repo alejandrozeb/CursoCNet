@@ -291,6 +291,9 @@ namespace FundamentosCSHarp
 
             //se pueden hacer uniones
 
+            //-----objetos complejos y linq------
+
+
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {

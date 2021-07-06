@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FundamentosCSHarp.Models
 {
-    internal class Bebida
+    public class Bebida
     {
         //atributos
         public string Nombre { get; set; }
