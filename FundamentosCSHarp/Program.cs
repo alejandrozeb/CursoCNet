@@ -10,6 +10,7 @@ using System.Text.Json.Serialization;
 using System.IO;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Linq;
 
 namespace FundamentosCSHarp
 {
@@ -261,6 +262,18 @@ namespace FundamentosCSHarp
             var CervezaRespuesta = await service.Send(cervezaG);
 
             //podemos cambiar por post u otro objeto
+
+            //Linq 
+            //permite realizar consulta a coleccioes bds, listas, arreglos
+
+            //using system.linq
+            List<int> numerosLinq = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 };
+            var numeroLi = numerosLinq.Where(d => d == 7 ).FirstOrDefault();
+            //exprecion lamda
+            //el predicado indica la coleccion de numeros, seguido de la condicion u expresion
+            //default te devuelve el defautl
+            Console.WriteLine(numeroLi);
+            //sin for o un ciclo se realizo con una funcion
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
