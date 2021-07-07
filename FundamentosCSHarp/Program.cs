@@ -293,6 +293,43 @@ namespace FundamentosCSHarp
 
             //-----objetos complejos y linq------
 
+            List<Bar> bares = new List<Bar>()
+            {
+                new Bar("El bar")
+                {
+                    cervezas = new List<Cerveza>()
+                    {
+                        new Cerveza(){ Alcohol = 7, Cantidad = 10, Marca = "Pale Ale", Nombre = "Minerva" },
+                        new Cerveza(){ Alcohol = 9, Cantidad = 5, Marca = "Ticus", Nombre = "Colima" },
+                        new Cerveza(){ Alcohol = 7, Cantidad = 8, Marca = "Stout", Nombre = "Minerva" },
+                    }
+                },
+                new Bar("El bar 2")
+                {
+                    cervezas = new List<Cerveza>()
+                    {
+                    new Cerveza(){ Alcohol = 7, Cantidad = 10, Marca = "Pale Ale", Nombre = "Minerva" },
+                    new Cerveza(){ Alcohol = 6, Cantidad = 100, Marca = "Piedra lisa", Nombre = "Colima" },
+                    }
+                },
+                new Bar("El bar nuevo")
+            };
+
+            //buscando  una cerveza
+            var bar = (from d in bares
+                      where d.cervezas.Where(c => c.Nombre == "Ticus").Count() > 0
+                      select d).ToList();
+            //parceamos a tipo list
+
+
+            List < Cerveza > cervezas2Linq = new List<Cerveza>()
+            {
+                new Cerveza(){ Alcohol = 7, Cantidad = 10, Marca = "Pale Ale", Nombre = "Minerva" },
+                new Cerveza(){ Alcohol = 9, Cantidad = 5, Marca = "Ticus", Nombre = "Colima" },
+                new Cerveza(){ Alcohol = 7, Cantidad = 8, Marca = "Stout", Nombre = "Minerva" },
+                new Cerveza(){ Alcohol = 6, Cantidad = 100, Marca = "Piedra Lisa", Nombre = "Colima" },
+            };
+
 
         }
 
