@@ -321,6 +321,15 @@ namespace FundamentosCSHarp
                       select d).ToList();
             //parceamos a tipo list
 
+            var barData = (from d in bares
+                           where d.cervezas.Where(c => c.Nombre == "Ticus").Count() > 0
+                           select new BarData(d.Nombre)
+                           {
+                                bebida = (from c in d.cervezas
+                                         select new Bebida(c.Nombre,c.Cantidad)
+                                         ).ToList()
+                           }
+                           ).ToList();
 
             List < Cerveza > cervezas2Linq = new List<Cerveza>()
             {
