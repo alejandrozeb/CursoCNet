@@ -11,6 +11,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Linq;
+using FundamentosCSHarp.Errors;
 
 namespace FundamentosCSHarp
 {
@@ -361,14 +362,30 @@ namespace FundamentosCSHarp
             {
                 var searcherBeer = new SearcherBeer();
             }
+            //podemos categorizae
+            catch (FieldAccessException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (NotFoundBeerException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            
             finally {
                 //siemrpepp se ejecuta
                 Console.WriteLine();
             }
+            //las exceptions van en secuencia podemos usar especificas
+            //y una opcion general
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {

@@ -1,4 +1,5 @@
-﻿using FundamentosCSHarp.Models;
+﻿using FundamentosCSHarp.Errors;
+using FundamentosCSHarp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,9 @@ namespace FundamentosCSHarp.Service
             var cerveza = (from d in cervezas
                            where d.Nombre == Nombre
                            select d).First();
-
+            //enviamos una exception cpn throw
+            if (cerveza == null)
+                throw new NotFoundBeerException("la cerveza se ha terminado");
             return cerveza.Cantidad;
         }
     }
