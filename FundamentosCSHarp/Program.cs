@@ -339,7 +339,36 @@ namespace FundamentosCSHarp
                 new Cerveza(){ Alcohol = 6, Cantidad = 100, Marca = "Piedra Lisa", Nombre = "Colima" },
             };
 
+            //Exceptions 
 
+            //using sirve para crear un objeto
+            try {
+                using (var archivo = new StreamWriter(@"C:\hola.txt"))
+                {
+                    //streamWriter sirve para leer un fichero mandamos la ubicacion
+                    archivo.WriteLine("patito");
+                }
+            }
+            catch(Exception e) {
+                Console.WriteLine(e);
+            }
+
+            //muestra mensajes de error y el programa sigue corriendo
+
+            //busca cerveza
+
+            try
+            {
+                var searcherBeer = new SearcherBeer();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                //siemrpepp se ejecuta
+                Console.WriteLine();
+            }
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
