@@ -17,8 +17,10 @@ namespace FundamentosCSHarp
 {
     class Program
     {
-       //delegate
-        public delegate void Mostrar(string cadena);
+        //delegate
+        public delegate string Mostrar(string cadena);
+        //para no crear muchos delegados
+
        
         static async Task Main(string[] args)
         {
@@ -407,13 +409,13 @@ namespace FundamentosCSHarp
         //para delegate
         public static void HacerAlgo(Mostrar funcionFinal)
         {
-            funcionFinal("se envio desde otra funcion");
+            Console.WriteLine(funcionFinal("se envio desde otra funcion"));
         }
 
         //para delegate
-        public static void Show(string cad)
+        public static string Show(string cad)
         {
-            Console.WriteLine("hola soy un metodo" +cad);
+            return cad.ToUpper();
         }
     }
 }
