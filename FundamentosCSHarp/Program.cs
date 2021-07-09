@@ -18,7 +18,7 @@ namespace FundamentosCSHarp
     class Program
     {
         //delegate
-        public delegate string Mostrar(string cadena);
+        //public delegate string Mostrar(string cadena);
         //para no crear muchos delegados
 
        
@@ -396,9 +396,19 @@ namespace FundamentosCSHarp
             //podemos enviar una funcion como argumento en otro funcion
             //envio de correo y luego tener otra funcionalidad
             //programacion funcional
-            Mostrar mostrar = Show;
-            HacerAlgo(mostrar);
+            Func<string, int> mostrar = Show;
+            //puedes agregar 16 posibles regresos
+            //string es el valor a enciar y int el valor de regreso
+            //asi ya no creamos delegates para cada tipo
+            //HacerAlgo(mostrar);
 
+            //accion no regresa nada
+            Action<string, string> mostrar2 = Show2;
+
+        }
+
+        public static void Show2(string cad, string cad2) {
+            Console.WriteLine(cad+cad2);
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
@@ -407,15 +417,15 @@ namespace FundamentosCSHarp
             bebida.MaxRecomendado();
         }
         //para delegate
-        public static void HacerAlgo(Mostrar funcionFinal)
+        public static void HacerAlgo(Action<string, string> funcionFinal)
         {
-            Console.WriteLine(funcionFinal("se envio desde otra funcion"));
+            //Console.WriteLine(funcionFinal("se envio desde otra funcion", "otra"));
         }
 
         //para delegate
-        public static string Show(string cad)
+        public static int Show(string cad)
         {
-            return cad.ToUpper();
+            return cad.Count();
         }
     }
 }
