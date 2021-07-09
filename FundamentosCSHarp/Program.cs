@@ -17,6 +17,9 @@ namespace FundamentosCSHarp
 {
     class Program
     {
+       //delegate
+        public delegate void Mostrar(string cadena);
+       
         static async Task Main(string[] args)
         {
             byte numero = 255;
@@ -386,6 +389,14 @@ namespace FundamentosCSHarp
             }
             //las exceptions van en secuencia podemos usar especificas
             //y una opcion general
+
+            //-----delegados------
+            //podemos enviar una funcion como argumento en otro funcion
+            //envio de correo y luego tener otra funcionalidad
+            //programacion funcional
+            Mostrar mostrar = Show;
+            HacerAlgo(mostrar);
+
         }
 
         static void MostrarRecomendacion(IBebidaAlcoholica bebida) {
@@ -393,6 +404,16 @@ namespace FundamentosCSHarp
             //podemos asegurarnos de los metodos
             bebida.MaxRecomendado();
         }
+        //para delegate
+        public static void HacerAlgo(Mostrar funcionFinal)
+        {
+            funcionFinal("se envio desde otra funcion");
+        }
 
+        //para delegate
+        public static void Show(string cad)
+        {
+            Console.WriteLine("hola soy un metodo" +cad);
+        }
     }
 }
