@@ -405,7 +405,21 @@ namespace FundamentosCSHarp
             //accion no regresa nada
             Action<string, string> mostrar2 = Show2;
 
-        }
+
+            //---------Predicate------
+            //es una implementacion de los delegados
+            //te permite evitar los tipos, regresa una sentencia true o false
+            //podemos guardar la logica
+            var numbers = new List<int> { 1, 56, 2, 3, 3, 45, 6 };
+            var predicate = new Predicate<int>(IsDivider2);
+            //el generic es el atributo que recibir
+            var predicate2 = new Predicate<int>(x => x % 2 == 0);
+            //como funcion anonima o lamda
+
+            var dividers2 = numbers.FindAll(predicate2);
+            //regresa todos los divisibles entre 2
+
+        }   
 
         public static void Show2(string cad, string cad2) {
             Console.WriteLine(cad+cad2);
@@ -427,5 +441,8 @@ namespace FundamentosCSHarp
         {
             return cad.Count();
         }
+
+        //definimos el predicate
+        static bool IsDivider2(int x) => x % 2 == 0;
     }
 }
